@@ -165,7 +165,7 @@ a {text-decoration: none;}
     background-image: url('img/deco_bg2.jpeg');
     background-position: center;
     background-repeat: repeat;
-    background-size: cover;
+    background-size: contain;
 }
 /* home */
 
