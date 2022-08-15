@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/knewave');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200&family=Montserrat:wght@200&family=Orbitron&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
 * {margin: 0; box-sizing: border;}
@@ -133,7 +133,7 @@ a {text-decoration: none;}
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Knewave', sans-serif;
+    font-family: 'Knewave', cursive;
     font-size: 200px;
 }
 .main p {
@@ -148,7 +148,7 @@ a {text-decoration: none;}
     margin-bottom: 12rem;
     width: 100vw;
     height: 100px;
-    font-family: 'Knewave', sans-serif;
+    font-family: 'Knewave', cursive;
     font-size: 50px;
     color: #333;
 }
@@ -397,7 +397,6 @@ a {text-decoration: none;}
         height: 13.0208vw;
         font-size: 6.5104vw;
     }
-
     /* home */
     
     .content .sec_about {     
