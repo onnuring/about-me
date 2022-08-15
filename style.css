@@ -244,7 +244,7 @@ a {text-decoration: none;}
     text-align: center;
 }
 
-@media (min-width:769px)and(max-width:1440px){
+@media (max-width:1440px){
     .header {
         height: 7.6389vw;
         
