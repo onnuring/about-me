@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@200&family=Montserrat:wght@200&family=Orbitron&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
 * {margin: 0; box-sizing: border;}
 html, body {
     width: 100%;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
-ul {list-style: none;}
-a {text-decoration: none;}
+body{overflow-x:hidden; overflow-y:auto} 
+a {text-decoration: none; color: #333;}
 [data-scroll] {
     opacity: 0;
     will-change: transform, scale, opacity;
@@ -28,6 +29,9 @@ a {text-decoration: none;}
 .img_box img{
     display: block;
     width: 100%;
+}
+ul {
+    list-style: none;
 }
 
 
@@ -77,6 +81,8 @@ a {text-decoration: none;}
 }
 :root {
     --navbar-color: #ae360e;
+    --ti-cursor-margin-left: 1em;
+    --ti-cursor-color: #ae360e;
 }
 .sec_nav li a:after {
     content: "";
@@ -119,7 +125,6 @@ a {text-decoration: none;}
 }
 
 
-
 .content>div {height: 100vh;}
 .content .sec_home {
     position: relative;
@@ -127,6 +132,7 @@ a {text-decoration: none;}
     padding-top: 230px;
     height: 100vh;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 .sec_home .main {
     position: absolute;
@@ -145,7 +151,7 @@ a {text-decoration: none;}
 }
 .sec_home .cover {
     display: flex;
-    margin-bottom: 12rem;
+    margin-bottom: 200px;
     width: 100vw;
     height: 100px;
     font-family: 'Knewave', cursive;
@@ -163,36 +169,122 @@ a {text-decoration: none;}
 .cover p {
     display: flex;
     background-image: url('img/deco_bg2.jpeg');
-    background-position: center;
+    background-position: bottom;
     background-repeat: repeat;
     background-size: contain;
 }
 /* home */
 
 .content .sec_about {
+    height: 700px;
+    width: 100%;
     background-color: #f7f7e9;  
-    padding-top: 150px;
+    padding-top: 100px;
     box-sizing: border-box;
+    position: relative;
 }
-.sec_about .about_me {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.about_me .about_wrap {
     width: 1080px;
-    padding: 50px;
     margin: 0 auto;
 }
-.about_me .img_box {
-    width: 350px;
-    border: 5px solid #65301f;
+.itsme {
+    padding-bottom: 150px;
 }
-.about_me .desc {
-    width: 620px;
-}
-.about_me p {
-    font-size: 18px;
-    color: #333;
+.itsme p {
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: -1px;
+    color: #333;
+    transition: all .5s ease-in-out;
+    animation: cloudfont 1s infinite;
+}
+@keyframes cloudfont {
+    0% {color: #333; transform: scale(1);}
+    50% {color: #ae360e; transform: scale(1.05);}
+    100% {color: #333; transform: scale(1);}
+}
+
+/* rellax scroll */
+
+
+.cloud_wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.about_me .cloud1 {
+    width: 350px;
+}
+.about_me .cloud2 {
+    width: 280px;
+}
+.about_me .cloud3 {
+    width: 320px;
+    margin-left: 100px;
+}
+.about_me .cloud4 {
+    margin: 0 50px 0 160px ;
+    width: 300px;
+}
+.about_me .cloud5 {
+    width: 350px;
+}
+.cloud_wrap .img_box {
+    overflow: visible;
+}
+.cloud_wrap a img {
+    transition: all .3s ease-in-out
+}
+.cloud_wrap a.rellax:hover img{
+    transform: scale(1.1);
+}
+@keyframes modalOpen {
+    0% {opacity: 0; transform: translate(-50%,-30%); z-index: -1;}
+    100% {opacity: 1; transform: translate(-50%,-45%); z-index: 99;}
+}
+@keyframes modalClose {
+    0% {opacity: 1; transform: translate(-50%,-45%); z-index: 99;}
+    100% {opacity: 0; transform: translate(-50%,-30%); z-index: -1;}
+}
+.modal_wrap {
+    display: block;
+    opacity: 1;
+    z-index: -9;
+}
+.modal {
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    width: 800px;
+    height: 500px;
+    border-radius: 100px;
+    background-color: #ecd7cb;
+    box-shadow: 5px 5px 10px rgba(130, 116, 111,0.8);
+    z-index: -1;
+    text-align: center;
+    padding: 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal>div {
+    display: none;
+    font-family: 'Knewave', cursive;
+    font-size: 50px;
+}
+.dim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(130, 116, 111, 0.5);
+    z-index: -2;
 }
 /* sec_about */
 
@@ -201,29 +293,105 @@ a {text-decoration: none;}
     font-family: 'Montserrat', sans-serif;
     padding-top: 150px;
     box-sizing: border-box;
+    width: 100%;
+    height: 400vh;
+    overflow: visible;
 }
-.sec_project h2 {
-    font-size: 55px;
+.sec_project .sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.sticky .font_ani {
+    position: absolute;
+    top: 100px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: -1px;
     color: #333;
+    transition: all .5s ease-in-out;
+    animation: cloudfont 1s infinite;
     margin-bottom: 100px;
 }
-.sec_project .icon_wrap {
-    max-width: 1080px;
-    margin: 0 auto;
-    display:flex;
-    justify-content: space-around;   
+.sticky .title {
+    font-size: 80px;
+    text-align: center;
+    font-family: 'Knewave', cursive;
+    color: #ae360e;
 }
-.icon_wrap > a {
-    transition: all .5s;
+.sec_project .card_frame {
+    position: absolute;
+    width: 95vw;
+    height: 30vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.icon_wrap > a :hover {
-    transform: scale(1.1);
+
+.card {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: perspective(100vw) translateX(100vw) rotateY('180deg');
+    transition: transform 0.1s;
+    cursor: pointer;
+    
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1vw;
+    overflow: hidden;
+    backface-visibility: hidden;
+    box-shadow: 2px 1px 2px 1px rgba(0,0,0,0.2);
+}
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff5e7;
+    background-image: url(img/cardfront.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #fff5e7;
+    background-image: url(img/cardback.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+.sec_project .front a{
+    font-size: 18px;
+}
+.sec_project .front .img_box {
+    width: 140px;
+}
+
+.icon_wrap > a :hover{
+   transform: scale(1.05);
 }
 .sec_project .img_box {
-    width: 300px;
-    transition: all 1s;
+    
+    transition: all .5s;
 }
+/* //.sec_project */
 
 .content .sec_contact {
     background-color: #ae360e;
@@ -290,27 +458,56 @@ a {text-decoration: none;}
             
         }
     }
-    
 
     /* home */
     
-    .content .sec_about {        
-        padding-top: 10.4167vw;        
+    .content .sec_about {
+        height: 48.6111vw;
+        width: 100%;
+        padding-top: 6.9444vw;
     }
-    .sec_about .about_me { 
+    .about_me .about_wrap {
         width: 75.0000vw;
-        padding: 3.4722vw;
     }
-    .about_me .img_box {
+    .itsme {
+        padding-bottom: 10.4167vw;
+    }
+    .itsme p {
+        font-size: 1.2500vw;       
+        letter-spacing: -0.0694vw;
+    }
+    
+    /* rellax scroll */
+    
+    .about_me .cloud1 {
         width: 24.3056vw;
-        border: 0.3472vw solid #65301f;
     }
-    .about_me .desc {
-        width: 43.0556vw;
+    .about_me .cloud2 {
+        width: 19.4444vw;
     }
-    .about_me p {
-        font-size: 1.2500vw;
+    .about_me .cloud3 {
+        width: 22.2222vw;
+        margin-left: 6.9444vw;
     }
+    .about_me .cloud4 {
+        margin: 0 3.4722vw 0 11.1111vw ;
+        width: 20.8333vw;
+    }
+    .about_me .cloud5 {
+        width: 24.3056vw;
+    }
+
+    .modal {
+        width: 55.5556vw;
+        height: 34.7222vw;
+        border-radius: 6.9444vw;
+        box-shadow: 0.3472vw 0.3472vw 0.6944vw rgba(130, 116, 111,0.8);      
+        padding: 6.9444vw;      
+    }
+    .modal>div {
+        font-size: 3.4722vw;
+    }
+
     /* sec_about */
     
     .content .sec_project {
@@ -385,6 +582,7 @@ a {text-decoration: none;}
     
     .content .sec_home {
         padding-top: 29.9479vw;
+        height: 100vw;
     }
     .sec_home .main {
         font-size: 26.0417vw;
@@ -396,12 +594,13 @@ a {text-decoration: none;}
     .sec_home .cover {
         height: 13.0208vw;
         font-size: 6.5104vw;
+        margin-bottom: 26.0417vw;
     }
     /* home */
     
     .content .sec_about {     
-        padding: 19.5313vw 0 15.6250vw;
-        
+        padding: 13.0208vw 0 15.6250vw;
+        height: 117.1875vw;
     }
     .sec_about .about_me {
         display: block;
@@ -409,19 +608,39 @@ a {text-decoration: none;}
         padding: 0;
         margin: 0 auto;
     }
-    .about_me .img_box {
-        width: 45.5729vw;
-        margin: 0 auto 5.8594vw;
-        border: 0.6510vw solid #65301f;
+
+    .itsme {
+        padding-bottom: 36.4583vw;
     }
-    .about_me .desc {
-        width: 80.7292vw;
-        margin: 0 auto;
-        text-align: center;
+    .about_me .itsme p{
+        font-size: 3.1250vw;
     }
-    .about_me p {
-        font-size: 2.8646vw;
-        /* 22px */
+    .about_me .cloud1 {
+        width: 36.4583vw;
+        margin-left: 6.5104vw;
+    }
+    .about_me .cloud2 {
+        width: 31.2500vw;
+    }
+    .about_me .cloud3 {
+        width: 32.5521vw;
+        margin-left: 0;
+    }
+    .about_me .cloud4 {
+        width: 38.6667vw;
+        margin: 0;
+    }
+    .about_me .cloud5 {
+        width: 35.5521vw;
+        margin-left: 3.9063vw;
+    }
+    .modal {
+        width: 65.1042vw;
+        height: 45.5729vw;
+        padding: 3.9063vw;
+    }
+    .modal>div {
+        font-size: 5.2083vw;
     }
     /* sec_about */
     
@@ -443,6 +662,7 @@ a {text-decoration: none;}
     
     .content .sec_contact {
         padding: 19.5313vw 0 15.6250vw;
+        height: 100vh;
     }
     .sec_contact h2 {
         margin-bottom: 6.5104vw;

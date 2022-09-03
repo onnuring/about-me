@@ -25,12 +25,13 @@ function marqueeText(count, element, direction) {
         count = 0
     }
     element.style.transform = `translateX(${direction * count}px)`
-
+    
     return count;
 }
 // translate 처리
 
 function animate() {
+    
     count1++
     count2++
 
@@ -38,7 +39,7 @@ function animate() {
     count2 = marqueeText(count2, pTag2, 1)
 
 
-    window.requestAnimationFrame(animate)
+    window.requestAnimationFrame(animate);
 }
 
 
