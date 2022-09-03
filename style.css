@@ -381,7 +381,7 @@ ul {
     font-size: 18px;
 }
 .sec_project .front .img_box {
-    width: 140px;
+    width: 9.7222vw;
 }
 
 .icon_wrap > a :hover{
@@ -472,10 +472,6 @@ ul {
     .itsme {
         padding-bottom: 10.4167vw;
     }
-    .itsme p {
-        font-size: 1.2500vw;       
-        letter-spacing: -0.0694vw;
-    }
     
     /* rellax scroll */
     
@@ -508,22 +504,23 @@ ul {
         font-size: 3.4722vw;
     }
 
-    /* sec_about */
-    
+    /* //sec_about */
     .content .sec_project {
         padding-top: 10.4167vw;
     }
-    .sec_project h2 {
-        font-size: 3.8194vw;        
+    .sticky .font_ani {
         margin-bottom: 6.9444vw;
     }
-    .sec_project .icon_wrap {
-        max-width: 75.0000vw;
+    .content .sec_project {
+        padding: 19.5313vw 0 15.6250vw;
+        
     }
-    .sec_project .img_box {
-        width: 20.8333vw;
+    .sec_project .front a{
+        font-size: 1.2500vw;
     }
     
+    /* //sec_project */
+
     .content .sec_contact {    
         padding-top: 10.4167vw;
     }
@@ -613,7 +610,7 @@ ul {
         padding-bottom: 36.4583vw;
     }
     .about_me .itsme p{
-        font-size: 3.1250vw;
+        font-size: 3.6458vw;
     }
     .about_me .cloud1 {
         width: 36.4583vw;
@@ -644,10 +641,6 @@ ul {
     }
     /* sec_about */
     
-    .content .sec_project {
-        padding: 19.5313vw 0 15.6250vw;
-        
-    }
     .sec_project h2 {
         font-size: 7.1615vw;
         margin-bottom: 13.0208vw;
@@ -655,9 +648,13 @@ ul {
     .sec_project .icon_wrap {
         width: 100%;        
     }
-
+    .sticky .font_ani{
+        font-size: 3.6458vw;
+    }
+    
     .sec_project .img_box {
         width: 33.8542vw;
+        margin: 0 auto;
     }
     
     .content .sec_contact {
